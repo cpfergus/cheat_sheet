@@ -1,0 +1,13 @@
+GEE
+
+Input - FC = a Feature Collection of polygons possibly lines)
+Output - centroids = 
+
+//Function
+var getCentroid = function(feature) {
+  var centroid = feature.geometry().centroid();
+  return ee.Feature(centroid).copyProperties(feature);
+};
+
+//Mapped Action
+var centroids = FC.map(getCentroid);
