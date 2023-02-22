@@ -1,0 +1,8 @@
+Inputs - MP = a multipolygon geometry drawn by hand
+
+Outputs - FC =  a feature collection where each input shape is a feature
+
+Code -
+var FC = ee.FeatureCollection(MP.geometries().map(function(g){return ee.Feature(ee.Geometry(g))}));`
+
+Notes -
